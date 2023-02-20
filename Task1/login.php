@@ -26,7 +26,7 @@
       showConfirmButton: false
       });                
       setTimeout(function() {
-      window.location.href = 'home.html';     // because previously header.location disturbing the work of swal ie immediate switch.
+      window.location.href = 'home.php';     // because previously header.location disturbing the work of swal ie immediate switch.
       }, 3000);
                 
     </script>
