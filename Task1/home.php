@@ -50,7 +50,7 @@
                                                 <p class="text-muted" id="emailChangedtext"><?php echo $loginnedEmail; ?></p>
                                                                                             
                                                 
-                                                <i class="fa fa-edit mt-2 edit-email" aria-hidden="true"></i>  
+                                                <!-- <i class="fa fa-edit mt-2 edit-email" aria-hidden="true"></i>   -->
                                                 
                                                                                           
                                                                                               
@@ -63,7 +63,7 @@
                                             <div class="d-flex justify-content-between">                                                   
                                                 <p class="text-muted"><?php echo $loginnedPhoneNo; ?></p>
                                                                                                
-                                                <i class="fa fa-edit mt-2 edit-phoneNo" aria-hidden="true"></i>                                                
+                                                <!-- <i class="fa fa-edit mt-2 edit-phoneNo" aria-hidden="true"></i>                                                 -->
                                             </div>                                            
                                         </div>
                                         <div>

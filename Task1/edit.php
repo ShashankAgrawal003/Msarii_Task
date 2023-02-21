@@ -25,7 +25,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Edit Page</p>
-                                    <form class="mx-1 mx-md-4" action="edit2.php" method="post" enctype="multipart/form-data">
+                                    <form class="mx-1 mx-md-4" action="#" method="post" enctype="multipart/form-data">
 
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fa fa-user fa-lg me-3 fa-fw"></i>
@@ -90,9 +90,47 @@
             </div>
         </div>
     </section>
-
-
-
 </body>
 </html>
+
+<?php
+
+if(isset($_POST['editedName'])){
+    $runned=false;
+    $DATABASE_HOST="localhost";
+    $DATABASE_USER="root";
+    $DATABASE_PASS="";
+    $DATABASE_NAME="msarri_task_one";
+    $sessionId=$_SESSION['user_id'];
+    echo $sessionId;
+    $con=mysqli_connect($DATABASE_HOST,$DATABASE_USER,$DATABASE_PASS,$DATABASE_NAME);
+    if(mysqli_connect_error()){
+        exit('Error connection to the Database'.mysqli_connect_error());
+    }
+    if($stmt=$con->prepare('update msariiuser set name=?,email=?,phoneNo=?,password=? where id=?')){
+        $stmt->bind_param('ssisi',$_POST['editedName'],$_POST['editedEmail'],$_POST['editedPhoneNo'],$_POST['editedPassword'],$sessionId);
+        $stmt->execute();
+        echo 'Successfully Edited';
+    
+        if($stmt->execute()){
+            // header("location: home.php");//yaha bina sql run kiya next page pe navigate kr ja rha hai
+            // exit;
+            $runned=true;
+        }
+        
+        }
+    else{
+        echo 'Error Occurred';
+        }
+    
+    $stmt->close();
+    $con->close();
+}
+if($runned){
+    header("location: home.php");
+}
+
+?>
+
+
 
