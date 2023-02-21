@@ -14,8 +14,8 @@ if($stmt=$con->prepare('update msariiuser set name=?,email=?,phoneNo=?,password=
     $stmt->execute();
     echo 'Successfully Edited';
 
-    if(isset($stmt)){
-        header("location: home.php");//yaha error aarha hai
+    if($stmt->execute()==true){
+        header("location: home.php");//yaha bina sql run kiya next page pe navigate kr ja rha hai
         exit;
     }
     
