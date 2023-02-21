@@ -32,7 +32,7 @@
                         <div class="row g-0">
                             <div class="col-md-4 gradient-custom text-center text-white"
                                 style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                                <img id="image-preview" src="imagesMy/profile2.jpg" alt="Avatar" class="img-fluid my-5"
+                                <img id="image-preview" src="imagesSer/<?php echo $loginnedImage;?>" alt="Avatar" class="img-fluid my-5"
                                     style="width: 100px; height:100px;border-radius: 50%;" />
                                 <h5><?php echo $loginnedName; ?></h5>
                                 

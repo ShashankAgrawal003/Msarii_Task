@@ -18,8 +18,13 @@ $loginnedName=$user['name'];
 $loginnedEmail=$user['email'];
 $loginnedPhoneNo=$user['phoneNo'];
 $loginnedPassword=$user['password'];
-
-
-
+if(!empty($user['image'])){    
+    //echo "success";
+    $loginnedImage=$user['image'];
+}
+else{
+    //echo "reached in else";
+    $loginnedImage='profile2.jpg';
+}
 
 ?>
