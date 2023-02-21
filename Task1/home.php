@@ -20,7 +20,9 @@
     }
 </style>
 
+
 <body>
+
     <?php require 'profile.php'?>
     <section class="vh-100" style="background-color: #f4f5f7;">
         <div class="container py-5 h-100">
@@ -30,69 +32,46 @@
                         <div class="row g-0">
                             <div class="col-md-4 gradient-custom text-center text-white"
                                 style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                                <img src="profile2.jpg" alt="Avatar" class="img-fluid my-5"
+                                <img id="image-preview" src="imagesMy/profile2.jpg" alt="Avatar" class="img-fluid my-5"
                                     style="width: 100px; height:100px;border-radius: 50%;" />
                                 <h5><?php echo $loginnedName; ?></h5>
-                                <i class="fa fa-edit mb-5"></i>
+                                
+                                <i class="fa fa-edit mb-5 edit-name" aria-hidden="true"></i>
                             </div>
                             <div class="col-md-8">
-                                <div class="card-body p-4">
-                                    <h6>Information</h6>
-                                    <hr class="mt-0 mb-4">
-                                    <div class="row pt-1">
-                                        <div class="col-6 mb-3">
+                                <form action="edit.php" method="post">
+                                    <div class="card-body p-4">
+                                        <h6>Information</h6>
+                                        <hr class="mt-0 mb-4">                                   
+                                        <div class="col-6">
                                             <h6>Email</h6>
-                                            <div class="row">
-                                                <div class="col-8">
-                                                    <p class="text-muted"><?php echo $loginnedEmail; ?></p>
-                                                </div>
-                                                <div class="col-2">
-                                                    <i class="fa fa-edit"></i>
-                                                </div>
+                                            <div class="d-flex justify-content-between">   
+                                                
+                                                <p class="text-muted" id="emailChangedtext"><?php echo $loginnedEmail; ?></p>
+                                                                                            
+                                                
+                                                <i class="fa fa-edit mt-2 edit-email" aria-hidden="true"></i>  
+                                                
+                                                                                          
+                                                                                              
                                             </div>
-                                        </div>
+                                        </div>                                   
+                                        <h6>Other Information</h6>
+                                        <hr class="mt-0 mb-4">                                       
                                         <div class="col-6 mb-3">
                                             <h6>Phone</h6>
-                                            <div class="row">
-                                                <div class="col-8">
-                                                    <p class="text-muted"><?php echo $loginnedPhoneNo; ?></p>
-                                                </div>
-                                                <div class="col-2">
-                                                    <i class="fa fa-edit"></i>
-                                                </div>
+                                            <div class="d-flex justify-content-between">                                                   
+                                                <p class="text-muted"><?php echo $loginnedPhoneNo; ?></p>
+                                                                                               
+                                                <i class="fa fa-edit mt-2 edit-phoneNo" aria-hidden="true"></i>                                                
                                             </div>                                            
                                         </div>
-                                    </div>
-                                    <h6>All Password</h6>
-                                    <hr class="mt-0 mb-4">
-                                    <div class="row pt-1">
-                                        <div class="col-6 mb-3">
-                                            <h6>Password</h6>
-                                            <div class="row">
-                                                <div class="col-8">
-                                                    <p class="text-muted"><?php echo $loginnedPassword; ?></p>
-                                                </div>
-                                                <div class="col-2">
-                                                    <i class="fa fa-edit"></i>
-                                                </div>
-                                            </div>                                                                                      
+                                        <div>
+                                           <input type="submit" value="Edit" class="btn btn-success" />
+                                            <!-- <button class="btn btn-success" id="submit-btn" >Save</button> -->
                                         </div>
-                                        <!-- <div class="col-6 mb-3">
-                                            <h6>Re-Entered Password</h6>
-                                            <div class="row">
-                                                <div class="col-8">
-                                                    <p class="text-muted">Dolor sit amet</p>
-                                                </div>
-                                                <div class="col-2">
-                                                    <i class="fa fa-edit"></i>
-                                                </div>
-                                            </div>                                           
-                                        </div> -->
-                                    </div>
-                                    <div>
-                                        <input type="file" id="myFile" name="filename">
-                                    </div>
-                                </div>
+                                    </form>
+                                </div>                           
                             </div>
                         </div>
                     </div>
