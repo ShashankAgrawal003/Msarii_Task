@@ -54,7 +54,7 @@ if($stmt=$con->prepare('Select id, password from msariiuser where name=?')){
                 showConfirmButton: false
             });                
                 setTimeout(function() {
-                window.location.href = 'login.html';     // because previously header.location disturbing the work of swal ie immediate switch.
+                window.location.href = 'login.html';     
                 }, 3000);
                 
             </script>

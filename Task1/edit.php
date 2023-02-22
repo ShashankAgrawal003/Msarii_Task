@@ -125,7 +125,7 @@ if(isset($_POST['editedName'])){
         if ($stmt->execute()) {
             echo "Statement executed successfully.";
             $runned=true;
-            // header("location: home.php");
+            // header("location: home.php");     error from header ie already done above while showing profile.php data
             // exit;
 
         } else {
@@ -148,7 +148,7 @@ if(isset($_POST['editedName'])){
                 title: 'Edited successfully / Data inserted successfully !',
                 text: 'You will now be redirected to the Home page.',
                 icon: 'success',
-                timer: 4000, 
+                timer: 3000, 
                 showConfirmButton: false
             });                
                 setTimeout(function() {
