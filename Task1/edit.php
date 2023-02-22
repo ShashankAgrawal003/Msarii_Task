@@ -141,6 +141,24 @@ if(isset($_POST['editedName'])){
     if($runned){
         //header("location:home.php");
         //exit;
+        ?>  
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script>
+                swal({                          
+                title: 'Edited successfully / Data inserted successfully !',
+                text: 'You will now be redirected to the Home page.',
+                icon: 'success',
+                timer: 4000, 
+                showConfirmButton: false
+            });                
+                setTimeout(function() {
+                window.location.href = 'home.php';     
+                }, 3000);
+                
+            </script>
+
+
+            <?php
     }
 }
 ?>
