@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_GET['id'])){
     $id=$_GET['id'];
     $conn = mysqli_connect("localhost", "root", "", "msarii_task_two");
@@ -9,6 +8,4 @@ if(isset($_GET['id'])){
         header('location:subitem.php');
     } 
 }
-
-
 ?>

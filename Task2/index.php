@@ -5,19 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Msarii_Task_2</title>
+    <title>Msarii_Task_2 Item Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
 </head>
 
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Pages Name</a>
+            <a class="navbar-brand" href="#">Shashank Agrawal</a>
           </div>
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.php">Item Page</a></li>
@@ -40,7 +38,6 @@
                             <td>
                                 <button type="button" name="add" id="add" class="btn btn-success">
                                     <i class="fa fa-plus" style="font-size:20px"></i>
-
                                 </button>
                             </td>
                         </tr>
@@ -48,7 +45,6 @@
                     <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
                 </div>
             </form>
-
         </div>
         <!-- dynamic table -->
         <div class="container">
@@ -64,8 +60,8 @@
                         </tr>
                     </thead>
                     <tbody id="dynamic_item_content">
-                    <?php
-                    
+                    <!-- dynamic content for items -->
+                    <?php                    
                     $conn = mysqli_connect("localhost", "root", "", "msarii_task_two");
                     if($conn->connect_error){
                         die("Connection failed: ".$conn->connect_error);
@@ -81,16 +77,11 @@
                                 <td><a class='btn btn-danger btn-sm' href='delete.php?id=$row[id]'><i class='fa fa-trash' aria-hidden='true'></i></a></td>
                         </tr>";
                     }
-                    ?>
-                        
-                        
+                    ?>                        
                     </tbody>
-
                 </div>
             </div>
-
-        </div>
-        
+        </div>        
     </div>
 </body>
 
@@ -102,28 +93,23 @@
         $('#add').click(function () {
             i++;
             $('#dynamic_field').append('<tr id="row' + i + '"><td><input type="text" name="itemName[]" id="itemName" placeholder="Add Items:-" class="form-control name_list" /></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove"><i class="fa fa-minus" style="font-size:20px"></i></button></td></tr>');
-
         });
         $(document).on('click', '.btn_remove', function () {
             let button_id = $(this).attr("id");
             $('#row' + button_id + '').remove();
         });
 
-        $('#submit').click(function () {
-            $.ajax({
-                url: "item.php",
-                method: "POST",
-                data: $('#add_item').serialize(),   //serialize all form data into array
-                success: function (data) {
-                    alert(data);
-                    location.reload();
-                    $('#add_item')[0].reset();
-                }
-            });
+    $('#submit').click(function () {
+        $.ajax({
+            url: "item.php",
+            method: "POST",
+            data: $('#add_item').serialize(),   //serialize all form data into array
+            success: function (data) {
+                alert(data);
+                location.reload();
+                $('#add_item')[0].reset();
+            }
         });
-
-
     });
-
-
+    });
 </script>

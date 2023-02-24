@@ -47,25 +47,23 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
           } 
      }
 } 
- ?> 
-
-<?php  
-if($_SERVER['REQUEST_METHOD']=='GET'){ 
-     $connect = mysqli_connect("localhost", "root", "", "msarii_task_two");  
-     if($connect->connect_error){
-          die("Connection failed: ".$connect->connect_error);
-      }
-      $result = mysqli_query($connect, "SELECT * FROM items");
-      $x=0;
-      while ($row = mysqli_fetch_assoc($result)) 
-      {   $x++;
-          echo "
-               <tr>
-                    <td><input type='checkbox' id='$row[id]' name='checkbox[]' value='$row[id]/$row[itemName]'/></td>
-                    <td>$x</td>
-                    <td>$row[itemName]</td>
-               </tr>";
-      }
- }
- 
- ?> 
+else{
+     if($_SERVER['REQUEST_METHOD']=='GET'){ 
+          $connect = mysqli_connect("localhost", "root", "", "msarii_task_two");  
+          if($connect->connect_error){
+               die("Connection failed: ".$connect->connect_error);
+          }
+          $result = mysqli_query($connect, "SELECT * FROM items");
+          $x=0;
+          while ($row = mysqli_fetch_assoc($result)) 
+          {    $x++;
+               echo "
+                    <tr>
+                         <td><input type='checkbox' id='$row[id]' name='checkbox[]' value='$row[id]/$row[itemName]'/></td>
+                         <td>$x</td>
+                         <td>$row[itemName]</td>
+                    </tr>";
+          }
+     }
+}
+?> 

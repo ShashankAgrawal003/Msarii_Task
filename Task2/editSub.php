@@ -3,31 +3,24 @@ $conn = mysqli_connect("localhost", "root", "", "msarii_task_two");
 if($conn->connect_error) {  die("Connection failed: ".$conn->connect_error); }
 
 if($_SERVER['REQUEST_METHOD']=='GET'){   
-    $id=$_GET['id'];
-    echo "outsidepost".$id;   
+    $id=$_GET['id']; 
     $result = mysqli_query($conn, "SELECT * FROM subitems where id=$id");
     $row=$result->fetch_assoc();
     if(!$row){
         header("location:subitem.php");
         exit;
     }
-
-$SubItemName=$row['subItemName'];
-echo $SubItemName;
+    $SubItemName=$row['subItemName'];
 }
 // post method
 else{
     $id=$_POST['id'];
-    echo "inside post".$id;
     $SubItemName=$_POST['editSubItemName'];
-    echo "EditedName".$SubItemName;   // yaha taak sahi chal rha but update nhi ho rha hai???
     $query="UPDATE subitems set subItemName='$SubItemName' where id='$id'";
     if(mysqli_query($conn,$query)){
         header('location:subitem.php');
     }    
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -38,15 +31,14 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sub Edit Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Pages Name</a>
+            <a class="navbar-brand" href="#">Shashank Agrawal</a>
           </div>
           <ul class="nav navbar-nav">
             <li><a href="index.php">Item Page</a></li>
@@ -61,14 +53,9 @@ else{
             <form method="post">
                 <input type="hidden" name="id" value="<?php echo $id;?>">
                 <input type="text" id="editSubItemName" name="editSubItemName" value="<?php echo $SubItemName;?>"/>
-                <input type="submit"  class="btn btn-success btn-lg" id="submit" value="Save Changes">
-
-                
+                <input type="submit"  class="btn btn-success btn-lg" id="submit" value="Save Changes">                
             </form>
-
         </div>
-
-    </div>
-      
+    </div>      
 </body>
 </html>

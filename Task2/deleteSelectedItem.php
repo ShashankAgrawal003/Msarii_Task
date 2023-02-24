@@ -1,7 +1,3 @@
-<script>
-    alert("Are You Sure You want to delete");
-</script>
-
 <?php
 
 if(isset($_GET['id'])){
@@ -13,6 +9,5 @@ if(isset($_GET['id'])){
         header('location:mainTask.html');
     } 
 }
-
 
 ?>

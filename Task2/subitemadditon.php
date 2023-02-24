@@ -20,7 +20,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
           echo "Please Enter Name";  
           } 
      }
-
      else{
           if(isset($_POST['checkbox1'][0])){
                $connect = mysqli_connect("localhost", "root", "", "msarii_task_two");  
@@ -42,10 +41,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                {  
                echo "Please Enter Name";  
                } 
-
           } 
-     }
-     
+     }     
 }
 else {
      if($_SERVER['REQUEST_METHOD']=='GET')

@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Msarii_Task_2</title>
+    <title>Msarii_Task_2 SubItem Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
@@ -16,7 +15,7 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Pages Name</a>
+            <a class="navbar-brand" href="#">Shashank Agrawal</a>
           </div>
           <ul class="nav navbar-nav">
             <li><a href="index.php">Item Page</a></li>
@@ -80,14 +79,10 @@
                                 <td><a class='btn btn-danger btn-sm' href='deleteSub.php?id=$row[id]'><i class='fa fa-trash' aria-hidden='true'></i></a></td>
                         </tr>";
                     }
-                    ?>
-                        
-                        
+                    ?>                        
                     </tbody>
-
                 </div>
             </div>
-
         </div>
     </div>
 </body>
@@ -119,9 +114,5 @@
                 }
             });
         });
-
-
     });
-
-
 </script>

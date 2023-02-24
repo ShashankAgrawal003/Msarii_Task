@@ -15,5 +15,3 @@ while ($row = mysqli_fetch_assoc($result))
     </tr>";
 }
 ?>
-
-<!-- <a class='btn btn-primary btn-sm' href='modelOfSubItem.html?id=$x'>Add subitem</a>    like this unique krna hoga -->   
