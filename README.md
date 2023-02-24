@@ -31,17 +31,17 @@
 ![image](https://user-images.githubusercontent.com/56279418/220515683-75452ffb-924c-4aaa-a6bc-60b8c53ee29c.png)
 
 # Task 2
-# Item Page (many plus and minus button can be clicked at one form submission).
+# Item Page (Green Plus sign to dynamic create new row for content and MINUS sign to remove particular dynamic row).
 ![image](https://user-images.githubusercontent.com/56279418/221173329-8ba819a8-f337-426b-a3d1-8c2f5656f6ec.png)
 # SubItem Page
 ![image](https://user-images.githubusercontent.com/56279418/221173465-3eaf1167-25bb-4664-aa88-51dd076108f3.png)
 # Main Page of task
 ![image](https://user-images.githubusercontent.com/56279418/221173771-f1734587-a437-4cb2-a120-5443a734f8bf.png)
-# When you click the select Item green button. (dynamic List of items created at first page).
+# When you click the select Item green button. (dynamic List of items wich we created at first page shown).
 ![image](https://user-images.githubusercontent.com/56279418/221173897-9c30edb6-4ed6-42b3-be60-16408e85d23f.png)
 # With Select All and Unselect All functionality.
 ![image](https://user-images.githubusercontent.com/56279418/221174130-251c04c1-e20f-4514-92d9-2494deba78f5.png)
-# Dynamic list of subItems when you clicked dynamic button inside selected Item dynamic table. 
+# Dynamic list of subItems when you click dynamic button inside below selected Items dynamic table. 
 ![image](https://user-images.githubusercontent.com/56279418/221174347-c6f18417-0473-4ab0-bde9-52e7ad14a87e.png)
 # If clicked on submit then on that particular Item those subItem will be added with the cross button to delete.
 ![image](https://user-images.githubusercontent.com/56279418/221174662-78eddb99-13ab-4445-9d5e-335117b5cc3c.png)
