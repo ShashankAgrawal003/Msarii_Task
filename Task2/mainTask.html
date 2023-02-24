@@ -1,35 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masari Task 2</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Pages Name</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li><a href="index.php">Item Page</a></li>
-            <li><a href="subitem.php">Subitem Page</a></li>  
-            <li class="active"><a href="mainTask.html">Main Page</a></li>         
-          </ul>
-        </div>
-      </nav>
-      
-      <div class="container">
-        <div class="col-md-12 text-center">
-            <button type="button" class="btn btn-success">Select Item</button>
-            
-        </div>
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masari Task 2</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Pages Name</a>
       </div>
+      <ul class="nav navbar-nav">
+        <li><a href="index.php">Item Page</a></li>
+        <li><a href="subitem.php">Subitem Page</a></li>
+        <li class="active"><a href="mainTask.html">Main Page</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- nav ended -->
+  <div class="container">
+    <div class="col-md-12 text-center">
+      <button type="button" id="selectItem" class="btn btn-success" data-toggle="modal" data-target="#myModal">Select Items</button>
+
+      <!-- Model HTML code -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="myModalLabel">Items List</h4>
+
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <!-- Dynamic content will be displayed here -->
+              <div class="dynamicTable">
+                <form method="POST" id="frmOfItem">
+                  <table class='table table-bordered table-striped'>
+                    <thead class='thead-dark'>
+                      <tr class='d-flex justify-content-between'>
+                        <th class="text-center"><input type='checkbox' id="selectAll" onclick='select_all()'/></th>
+                        <th class="text-center">SNo.</th>
+                        <th class="text-center">Item Name</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dynamicIteams">
+                      <!-- dynamic table inside model -->
+                    </tbody>
+                  </table>
+                  <input type="button" class="btn btn-success" id="checkIteamValue" name="checkIteamValue"
+                    value="Save Selected item">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- model code end -->
+      <!-- bottom table of content -->
+      <div class="dynamicTableofSelectedIteams">
+        <h2>Select Subitem According to the Item</h2>
+        <table class='table table-bordered table-striped'>
+          <thead class='thead-dark'>
+            <tr class='d-flex justify-content-between'>
+              <th class="text-center">SNo.</th>
+              <th class="text-center">Item Name</th>
+              <th class="text-center">SubItem Button</th>
+              <th class="text-center">Delete Icon</th>
+            </tr>
+          </thead>
+          <tbody id="dynamicSelectedIteams">
+            <!-- dynamic bottom table -->
+          </tbody>
+        </table>
+      </div>
+      <!-- dynamic bottom table ended -->
+
+      <!-- model of subItem -->
+      <div class="modal fade" id="mySubModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="myModalLabel">Sub-Items List</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <div class="dynamicTableOfSubItem">
+                <form method="POST" id="frmOfSubItem">
+                  <table class='table table-bordered table-striped'>
+                    <thead class='thead-dark'>
+                      <tr class='d-flex justify-content-between'>
+                        <th class="text-center"><input type='checkbox' id="selectAllSubItem" onclick='select_allSubItem()'/></th>
+                        <th class="text-center">SNo.</th>
+                        <th class="text-center">SubItem Name</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dynamicSubIteams">
+                      <!-- dynamic subitem content -->
+                    </tbody>
+                  </table>
+                  <input type="button" class="btn btn-success" id="checkSubIteamValue" name="checkSubIteamValue"
+                    value="Save Selected SubItems">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- subitem model ended -->
+    </div>
+  </div>
 </body>
+
 </html>
+
+<script>
+  $(document).ready(function () {
+    $.ajax({                           // selected Item get method
+      type: 'get',
+      url: 'selectedIteam.php',
+      async: false, 
+      success: function (data) {
+        $('#dynamicSelectedIteams').html(data);   //yaha par direct populate ke bajaye store it then use it 
+      }
+    });
+
+    $.ajax({           // selected subItem get method
+      type: 'get',
+      url: 'selectedSubItem.php',
+      async: false, 
+      success: function (data) {
+        // $('#dynamicSelectedIteams').html(data);
+        console.log(data);
+        for(let y=0;y<data.length;y++){
+          let rowNumber=data[y]['ItemsrowId'];
+          let subItemContent=data[y]['selectedSubItemsName'];
+          let deleteContent=`<a href='deleteSelectedSubItem.php?selectedSubItemsId=${data[y]['selectedSubItemsId']}&ItemsrowId=${data[y]['ItemsrowId']}'><i class='fa fa-times' aria-hidden='true' style="color: red;"></i>`;
+          $(`#appendSubItem${rowNumber}`).append($(`<li style="color:grey;">${subItemContent}  ${deleteContent}</li>`));          
+        }        
+      }
+    });
+
+
+
+  });
+
+  function select_all() {
+    if (jQuery('#selectAll').prop("checked")) {
+      jQuery('input[type=checkbox]').each(function () {
+        jQuery('#' + this.id).prop('checked', true);
+      });
+    }
+    else {
+      jQuery('input[type=checkbox]').each(function () {
+        jQuery('#' + this.id).prop('checked', false);
+      });
+    }
+  }
+
+  $('#selectItem').click(function () {
+    // model content of item
+    $.ajax({
+      type: 'get',
+      url: 'item.php',
+      success: function (data) {
+        $('#dynamicIteams').html(data);
+      }
+    });
+  });
+  //dynmic button ke click pe subitem showing  this x value tells me where to append the subitem
+  function sltSubItem(x){
+    console.log('frontend',x);
+    $.ajax({
+      type: 'GET',
+      url: 'subitemadditon.php',
+      data: {rowNumber:x},
+      success: function (data) {
+        $('#dynamicSubIteams').html(data);
+      }
+    });
+  }
+
+  
+
+  function select_allSubItem(){    
+    //console.log("working");                  // ye bhi kaam nhi kr rha hai
+    if (jQuery('#selectAllSubItem').prop("checked")) {
+        //console.log("working");
+        jQuery('input[type=checkbox]').each(function () {
+        console.log("working1");
+        jQuery('#' + this.id).prop('checked', true);
+        console.log("working2");  // 32 times why?
+      });
+    }
+    else {
+      jQuery('input[type=checkbox]').each(function () {
+        jQuery('#' + this.id).prop('checked', false);
+      });
+    }
+
+}
+
+  $('#checkIteamValue').click(function () {
+    $.ajax({
+      url: "item.php",
+      method: "POST",
+      data: $('#frmOfItem').serialize(),   //serialize all form data into array
+      success: function (data) {
+        alert(data);
+        location.reload();
+        $('#frmOfItem')[0].reset();
+      }
+    });
+  });
+
+
+  $('#checkSubIteamValue').click(function () {
+    $.ajax({
+      url: "subitemadditon.php",
+      method: "POST",
+      data: $('#frmOfSubItem').serialize(),   //serialize all form data into array
+      success: function (data) {
+        alert(data);
+        location.reload();
+        $('#frmOfSubItem')[0].reset();
+      }
+    });
+  });
+</script>

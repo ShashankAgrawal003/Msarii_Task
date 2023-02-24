@@ -8,7 +8,7 @@
     <title>Msarii_Task_2</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
 </head>
@@ -116,6 +116,7 @@
                 data: $('#add_item').serialize(),   //serialize all form data into array
                 success: function (data) {
                     alert(data);
+                    location.reload();
                     $('#add_item')[0].reset();
                 }
             });
