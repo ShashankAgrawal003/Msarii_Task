@@ -30,6 +30,12 @@
 # Database with updated details and image also seen there.
 ![image](https://user-images.githubusercontent.com/56279418/220515683-75452ffb-924c-4aaa-a6bc-60b8c53ee29c.png)
 
+# Task 2
+# Item Page
+![image](https://user-images.githubusercontent.com/56279418/221172476-c7e4f160-26c1-48c1-8616-07a3b62c686b.png)
+# SubItem Page
+![image](https://user-images.githubusercontent.com/56279418/221172608-d2bb3362-7969-46b4-87d3-1c44972b080d.png)
+
 
 
 
